@@ -22,9 +22,9 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --logger "trx;LogFileName=test-results.trx"
+      run: dotnet test --logger "junit;LogFilePath=results/tests.xml"
     - name: Test Summary
       uses: test-summary/action@v1
       with:
-        paths: MyUnitTests/test-results.trx
+          paths: results/**/*.xml
       if: always()
