@@ -22,10 +22,9 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx"
+      run: dotnet test --logger "trx;LogFileName=test-results.trx"
     - name: Test Summary
       uses: test-summary/action@v1
       with:
-        paths: |
-                      **/*.trx
+        path: MyUnitTests/test-results.trx
       if: always()
