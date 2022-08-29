@@ -26,12 +26,12 @@ jobs:
     - name: Test Summary
       uses: test-summary/action@v1
       with:
-          output: "test/results/summary.md"
+          output: summary.md
           paths: results/**/*.xml
       if: always()
     - name: Upload test summary
       uses: actions/upload-artifact@v3
       with:
         name: test-results
-        path: "test/results/summary.md"
+        path: summary.md
       if: always()
