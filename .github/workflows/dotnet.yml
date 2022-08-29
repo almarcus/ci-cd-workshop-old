@@ -26,5 +26,5 @@ jobs:
     - name: Test Summary
       uses: test-summary/action@v1
       with:
-        path: MyUnitTests/test-results.trx
+        paths: MyUnitTests/test-results.trx
       if: always()
