@@ -22,12 +22,12 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --logger "junit;LogFilePath=results/tests.xml"
+      run: dotnet test --logger "junit;LogFilePath=tests.xml"
     - name: Test Summary
       uses: test-summary/action@v1
       with:
           output: summary.md
-          paths: results/**/*.xml
+          paths: /**/*.xml
       if: always()
     - name: Upload test summary
       uses: actions/upload-artifact@v3
