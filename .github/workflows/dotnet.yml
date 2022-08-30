@@ -35,3 +35,13 @@ jobs:
         name: test-results-${{github.run_number}}.md
         path: summary.md
       if: always()
+    - name: Test 2
+      run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
+    - name: Test Report 2
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: DotNET Tests
+        path: "**/test-results.trx"                            
+        reporter: dotnet-trx
+        fail-on-error: true
