@@ -21,23 +21,9 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    # - name: Test
-    #   run: dotnet test --logger "junit;LogFilePath=tests.xml"
-    # - name: Test Summary
-    #   uses: test-summary/action@v1
-    #   with:
-    #       output: summary.md
-    #       paths: ./**/*.xml
-    #   if: always()
-    # - name: Upload test summary
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: test-results-${{github.run_number}}.md
-    #     path: summary.md
-    #   if: always()
-    - name: Test 2
+    - name: Test
       run: dotnet test --logger "trx;LogFileName=test-results.trx"
-    - name: Test Report 2
+    - name: Test Report
       uses: dorny/test-reporter@v1
       if: always()
       with:
