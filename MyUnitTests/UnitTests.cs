@@ -6,16 +6,13 @@ public class UnitTests
 {
     int add(int x, int y) => (x+y);
 
-    [Fact]
-    public void PassingTest()
+    [Theory]
+    [InlineData(1, 2, 3)]
+    [InlineData(-4, -6, -10)]
+    [InlineData(-2, 2, 0)]
+    [InlineData(int.MinValue, -1, int.MaxValue)]
+    public void CanAddTheory(int value1, int value2, int expected)
     {
-        Assert.Equal(5, add(2,3));
+        Assert.Equal(expected, add(value1,value2));
     }
-
-    [Fact]
-    public void FailingTest()
-    {
-        Assert.Equal(6, add(2,3));
-    }
-
 }
