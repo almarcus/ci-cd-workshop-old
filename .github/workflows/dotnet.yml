@@ -27,7 +27,7 @@ jobs:
       uses: test-summary/action@v1
       with:
           output: summary.md
-          paths: /**/*.xml
+          paths: ./**/*.xml
       if: always()
     - name: Upload test summary
       uses: actions/upload-artifact@v3
