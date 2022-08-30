@@ -36,7 +36,7 @@ jobs:
         path: summary.md
       if: always()
     - name: Test 2
-      run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
+      run: dotnet test --logger "trx;LogFileName=test-results.trx"
     - name: Test Report 2
       uses: dorny/test-reporter@v1
       if: always()
