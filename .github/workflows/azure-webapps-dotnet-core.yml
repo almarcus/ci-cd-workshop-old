@@ -57,7 +57,9 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish MVCApp -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        working-directory: MVCApp # set to the folder with your app if it is not the root directory
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
