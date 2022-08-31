@@ -6,6 +6,7 @@ namespace MVCApp.Controllers;
 
 public class HomeController : Controller
 {
+    private HomeViewModel homeModel = new HomeViewModel();
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -15,7 +16,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        homeModel.WelcomeMessage = "Welcome, Aaron!";
+        return View(homeModel);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
