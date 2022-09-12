@@ -16,7 +16,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        homeModel.WelcomeMessage = Services.UserService.GreetUser("Paul"); // This is not the right way to do this and is for demonstration purposes only
+        homeModel.WelcomeMessage = Services.UserService.GreetUser("Aaron"); // This is not the right way to do this and is for demonstration purposes only
         return View(homeModel);
     }
 
