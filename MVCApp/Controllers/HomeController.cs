@@ -16,7 +16,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        homeModel.WelcomeMessage = "Welcome, Aaron!";
+        homeModel.WelcomeMessage = "Welcome, Tim!";
         return View(homeModel);
     }
 
